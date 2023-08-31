@@ -10,3 +10,9 @@ print(imparess)
 #a função volta a metade da lista
 metadinha = impares.metade_da_lista(lista)
 print(metadinha)
+#aqui soma a lista
+soma = impares.soma_lista(lista)
+print(soma)
+
+maiortermo = impares.maiorvalor(lista)
+print(maiortermo)
