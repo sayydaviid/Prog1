@@ -13,6 +13,6 @@ print(metadinha)
 #aqui soma a lista
 soma = impares.soma_lista(lista)
 print(soma)
-
+#aqui usamos para encontrar o maior valor
 maiortermo = impares.maiorvalor(lista)
 print(maiortermo)
