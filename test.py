@@ -277,8 +277,37 @@ def verificação(lista):
     embalagens_fora_do_padrão = 0
     for embalagens in lista:
         if embalagens < 7:
-            return embalagens_fora_do_padrão + 1
+            embalagens_fora_do_padrão += 1 
+            return embalagens_fora_do_padrão
 
 entrada = [1,2,3,4,5,6,7,8,20,1,2,3]
 entrada_filtrada = verificação(entrada)
 print(entrada_filtrada)
+
+# Sandro é um product owner na empresa de desenvolvimento de software
+# chamada Sistemas Binários Codificados (SBC). Você foi contratado como
+# estagiário pela SBC e vai trabalhar com o Sandro. Para que você se familiarize
+# com a metodologia Scrum adotada pela SBC, Sandro pediu que você o
+# ajudasse a determinar quantos itens do product backolog deveriam ser
+# incluídos em uma sprint backlog, dada a importância e estimativa de
+# complexidade de cada item, bem como a velocidade do time. Na metodologia
+# Scrum, deve-se incluir na sprint backlog os itens mais importantes, tal que, a
+# soma da complexidade dos itens incluídos seja menor ou igual a velocidade do
+# time. Na lista que Sandro lhe passou consta a complexidade de cada item
+# determinada pelo time. Sabe-se que os itens da lista já estão ordenados pela
+# importância, ou seja, o primeiro item é o mais importante e o último item é o
+# menos importante. Sandro pediu que você escrevesse um programa de
+# computador que, dada a velocidade do time e a lista de complexidade dos
+# itens, informe quantos itens podem ser incluídos na sprint backlog.
+ 
+def calcular_sprint(tarefas,velocidade):
+    qtd_tarefas = 0
+    complexidade = 0
+    for item in tarefas:
+        complexidade += item
+        if complexidade <= velocidade:
+            qtd_tarefas += 1
+        else:
+            break
+    return qtd_tarefas
+
