@@ -1,23 +1,24 @@
+
+#Hidaka fez em aula
 def validar_nascimento(data):
     try:
+        # Verificar se a data é composta apenas por dígitos
         if not data.isdigit():
-            raise Exception("nascimento invalido")
-        if 1900 > int(data) > 2023:
-            raise Exception("nascimento invalido")
-    except Exception as e:
+            raise ValueError("Nascimento inválido: A data deve conter apenas dígitos.")
+
+        # Converter a data para inteiro
+        ano_nascimento = int(data)
+
+        # Verificar se o ano está dentro de um intervalo razoável
+        if not (1900 <= ano_nascimento <= 2023):
+            raise ValueError("Nascimento inválido: Ano fora do intervalo válido.")
+
+    except ValueError as e:
         print(e)
     else:
-        print("nascimenento ok")
-#         try:
-# for item in data:
-#             if len(item) > 4:
-#                 return("idade certa")
-#     except:
-#         print("Ano de nascimento inválido")
+        print("Nascimento OK")
 
-# a = int(input("Digite o ano que você nasceu: "))
+# Exemplo de uso
+data_nascimento = input("Digite o ano de nascimento: ")
 
-# if validar_nascimento(a):
-#     print("Idade certa")
-# else:
-#     print("Idade errada")
+validar_nascimento(data_nascimento)
